@@ -7,6 +7,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
 		<link rel="icon" type="image/x-icon" href="./fav.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css">
 		<title>Alohomora</title>
 	</head>
 	<body>
@@ -24,46 +25,46 @@
 					</button>
 				</div>
 
-        <h2>Customise options:</h2>
+				<h2>Customise options:</h2>
 
-        <div class="d-flex align-items-center justify-content-center mx-auto">
-          <input type="number" class="col-2" id="passwordLengthInput" min="16" max="55" value="25" />
-          <input type="range" class="col-5" id="passwordLengthRange" min="16" max="55" value="25" />
-        </div>
+				<div class="d-flex align-items-center justify-content-center mx-auto">
+					<input type="number" class="col-3" id="passwordLengthInput" min="16" max="55" value="25" />
+					<input type="range" class="col-5" id="passwordLengthRange" min="16" max="55" value="25" />
+				</div>
 
-        <form class="characterGroups d-flex justify-content-center col-6 mx-auto">
-          <label class="toggler-wrapper" for="option-uppercase">
-            <input type="checkbox" id="option-uppercase" name="option-uppercase" value="uppercase" checked />
-            <div class="toggler-slider">
-              <div class="toggler-knob"></div>
-            </div>
-            <p>ABC</p>
-          </label>
+				<form class="characterGroups d-flex justify-content-center col-6 mx-auto">
+					<label class="toggler-wrapper" for="option-uppercase">
+						<input type="checkbox" id="option-uppercase" name="option-uppercase" value="uppercase" checked />
+						<div class="toggler-slider">
+							<div class="toggler-knob"></div>
+						</div>
+						<p>ABC</p>
+					</label>
 
-          <label class="toggler-wrapper" for="option-lowercase">
-            <input type="checkbox" id="option-lowercase" name="option-lowercase" value="lowercase" checked />
-            <div class="toggler-slider">
-              <div class="toggler-knob"></div>
-            </div>
-            <p>abc</p>
-          </label>
+					<label class="toggler-wrapper" for="option-lowercase">
+						<input type="checkbox" id="option-lowercase" name="option-lowercase" value="lowercase" checked />
+						<div class="toggler-slider">
+							<div class="toggler-knob"></div>
+						</div>
+						<p>abc</p>
+					</label>
 
-          <label class="toggler-wrapper" for="option-numbers">
-            <input type="checkbox" id="option-numbers" name="option-numbers" value="numbers" checked />
-            <div class="toggler-slider">
-              <div class="toggler-knob"></div>
-            </div>
-            <p>123</p>
-          </label>
+					<label class="toggler-wrapper" for="option-numbers">
+						<input type="checkbox" id="option-numbers" name="option-numbers" value="numbers" checked />
+						<div class="toggler-slider">
+							<div class="toggler-knob"></div>
+						</div>
+						<p>123</p>
+					</label>
 
-          <label class="toggler-wrapper" for="option-symbols">
-            <input type="checkbox" id="option-symbols" name="option-symbols" value="symbols" checked />
-            <div class="toggler-slider">
-              <div class="toggler-knob"></div>
-            </div>
-            <p>!@#</p>
-          </label>
-        </form>
+					<label class="toggler-wrapper" for="option-symbols">
+						<input type="checkbox" id="option-symbols" name="option-symbols" value="symbols" checked />
+						<div class="toggler-slider">
+							<div class="toggler-knob"></div>
+						</div>
+						<p>!@#</p>
+					</label>
+				</form>
 			</div>
 
 			<footer>
