@@ -1,3 +1,3 @@
 export default {
-    base: '/alohomora/src/',
+    base: '/alohomora/',
 };
