@@ -1,8 +1,6 @@
 # Alohomora 
 #### password generator
 
-👉 [Live demo](https://okidokitokiloki.github.io/alohomora/)
-
 ## General info
 In essence, this is just a glorified random ~~number~~ string generator, no fancy "true-random" libraries or anything like that used over here, who knows, maybe some day down the line.     
 The final output is based on user input between various character groups (uppercase, lowercase, numbers, and symbols) and output length.
