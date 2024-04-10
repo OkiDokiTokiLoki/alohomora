@@ -8,12 +8,12 @@ The final output is based on user input between various character groups (upperc
 
 ## Features 
 * Similar looking characters have been removed e.g. I, l or 0, O
-* Each character group has it's own colour formatting for easier identification
-* Minimum password length is 16 characters for decent strength
+* Each character group has it's own colour formatting for easier identification (additionally: the option to solarise colours)
+* Minimum password length is 16 characters for decent strength (default 25)
 * Copy to clipboard functionality (password itself and dedicated button)
 * Inputs are reactive to user change
-* Minor form validation (checkboxes "cannot" be unselected)
-* Dark theme by default, light theme available with prefers-color-scheme: light
+* Minor form validation (checkboxes cannot be "unselected")
+* Theme switcher and solarise options
 
 ## Technologies
 Created with:
