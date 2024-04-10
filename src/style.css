@@ -34,7 +34,7 @@ main {
   flex-direction: column;
   justify-content: space-around;
   flex: 1;
-  background: url('./backdrop.png');
+  background: url('../dist/backdrop.png');
 }
 
 h1 {
@@ -151,6 +151,7 @@ h2 {
 }
 
 #generatedPassword {
+  font-family: monospace;
   font-size: xx-large;
   font-weight: bolder;
   word-wrap: break-word;
