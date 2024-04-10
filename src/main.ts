@@ -118,6 +118,47 @@ generatedPasswordElement.addEventListener("click", () => {
 
 updateGeneratedPassword();
 
+const body: HTMLElement = document.body;
+const themeContainer: HTMLElement | null = document.getElementById('theme-container');
+
+if (themeContainer) {
+    themeContainer.addEventListener('click', event => {
+        const target = event.target as HTMLElement;
+        if (target.id === 'dark') {
+            setTheme('dark');
+        } else if (target.id === 'light') {
+            setTheme('light');
+        } else if (target.id === 'solar') {
+            toggleSolar();
+        }
+    });
+}
+
+function setTheme(theme: string): void {
+    body.classList.replace(body.classList.item(0) as string, theme);
+    localStorage.setItem('theme', theme);
+}
+
+function toggleSolar(): void {
+    const isSolar: boolean = body.classList.contains('solar');
+    if (isSolar) {
+        body.classList.remove('solar');
+        localStorage.setItem('theme', body.classList.item(0) as string);
+    } else {
+        body.classList.add('solar');
+        localStorage.setItem('theme', 'solar');
+    }
+}
+
+// On page load
+const theme: string | null = localStorage.getItem('theme');
+if (theme) {
+    body.classList.add(theme);
+    if (theme === 'solar') {
+        body.classList.add('solar');
+    }
+}
+
 (() => {
 	const container = document.querySelector(".main") as HTMLElement;
 
