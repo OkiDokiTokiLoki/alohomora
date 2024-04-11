@@ -3,47 +3,52 @@
   line-height: 1.5;
 
   color-scheme: dark light;
-  --darkground: hsl(202, 85%, 8%);
-  --darkground-shade: hsl(202, 85%, 7%);  
   --gold: hsl(59, 77%, 40%);
   --pink: hsl(330, 88%, 55%);
   --blue: hsl(178, 70%, 43%);
 
   --grey0: hsl(0, 0%, 97%);
-  --grey1: hsl(212, 22%, 88%);
-  --grey2: hsl(213, 21%, 75%);
-  --grey3: hsl(222, 15%, 50%);
-  --grey4: hsl(208, 11%, 30%);
-  --grey5: hsl(218, 12%, 19%);
-  --grey6: hsl(200, 20%, 9%);
+  --grey1: hsl(213, 21%, 75%);
+  --grey2: hsl(222, 15%, 50%);
+  --grey3: hsl(208, 11%, 30%);
+  --grey4: hsl(218, 12%, 19%);
+  --grey5: hsl(200, 20%, 9%);
+
+  --uppercase-group: var(--blue);
+  --lowercase-group: var(--gold);
+  --number-group: var(--grey0);
+  --symbol-group: var(--pink);
 }
 
-.solar{
+.solar {
   --grey0: hsl(66, 100%, 92%);
-  --grey1: hsl(61, 74%, 89%);
-  --grey2: hsl(93, 90%, 74%);
-  --grey3: hsl(101, 63%, 48%);
-  --grey4: hsl(143, 45%, 45%);
-  --grey5: hsl(192, 100%, 20%);
-  --grey6: hsl(192, 100%, 15%);
+  --grey1: hsl(93, 90%, 74%);
+  --grey2: hsl(101, 63%, 48%);
+  --grey3: hsl(143, 45%, 45%);
+  --grey4: hsl(192, 100%, 20%);
+  --grey5: hsl(192, 100%, 15%);
+  --uppercase-group: var(--grey2);
+  --lowercase-group: var(--grey0);
+  --number-group: hsl(50, 100%, 50%);
+  --symbol-group: hsl(275, 100%, 75%);
 }
 
-.dark{
-  --bg: var(--grey6);
+.dark {
+  --bg: var(--grey5);
   --text: var(--grey0);
   --accent-col: var(--gold);
-  --button: var(--grey5);
-  --container: var(--grey6);
-  --container-hover: var(--grey5);
-}
-
-.light{
-  --bg: var(--grey2);
-  --text: var(--grey6);
-  --accent-col: var(--blue);
-  --button: var(--blue);
+  --button: var(--grey4);
   --container: var(--grey5);
   --container-hover: var(--grey4);
+}
+
+.light {
+  --bg: var(--grey1);
+  --text: var(--grey5);
+  --accent-col: var(--blue);
+  --button: var(--blue);
+  --container: var(--grey4);
+  --container-hover: var(--grey3);
 }
 
 *,
@@ -60,8 +65,6 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  /* background-color: var(--darkground);
-  color: hsla(0, 0%, 100%, 0.9); */
   color: var(--text);
   background: var(--bg);
   min-width: 320px;
@@ -84,6 +87,24 @@ h1 {
 h2 {
   margin-top: 100px;
   margin-bottom: 10px;
+}
+
+button {
+  margin-inline: 5px;
+  padding: 5px 7px;
+  background-color: var(--button);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid var(--pink) !important;
+}
+
+button svg {
+  scale: 0.85;
 }
 
 .d-flex {
@@ -201,7 +222,7 @@ h2 {
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #ffffff90;
+  border-bottom: 1px solid var(--grey2);
   cursor: pointer;
 }
 
@@ -211,20 +232,6 @@ h2 {
 
 #generatedPassword span {
   margin-inline: 1px;
-}
-
-.pw-buttons button {
-  margin-inline: 0.15rem;
-  padding: 0.35rem 0.75rem;
-  background-color: var(--button);
-  border: 2px solid transparent;
-  border-radius: 5px;
-  transition: all 300ms ease;
-  cursor: pointer;
-}
-
-.pw-buttons button:hover {
-  border: 2px solid var(--pink);
 }
 
 form {
@@ -297,21 +304,20 @@ label.toggler-wrapper p {
   padding-top: 10px;
 }
 
-#theme-container button {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid var(--pink);
-  cursor: pointer;
+#dark {
+  background: var(--grey4);
+  fill: #fff;
 }
-#dark{
-  background: var(--grey5);
+
+#light {
+  background: var(--grey1);
+  fill: var(--grey4);
+  border-color: var(--grey4);
 }
-#light{
-  background: var(--grey2);
-}
-#solar{
+
+#solar {
   background: var(--gold);
+  fill: var(--grey4);
 }
 
 footer a {

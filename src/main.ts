@@ -8,11 +8,10 @@ class PasswordGenerator {
 
 	generatePassword(length: number, options: { uppercase: boolean; lowercase: boolean; numbers: boolean; symbols: boolean }): { password: string; colors: string[] } {
 		const allCharacters = [
-			{ chars: this.uppercaseLetters, enabled: options.uppercase, color: "hsl(178, 70%, 50%)" },
-			{ chars: this.lowercaseLetters, enabled: options.lowercase, color: "hsl(59, 77%, 60%)" },
-			{ chars: this.numbers, enabled: options.numbers, color: "hsl(255, 100%, 100%)" },
-			{ chars: this.specialCharacters, enabled: options.symbols, color: "hsl(330, 88%, 55%)" },
-		];
+			{ chars: this.uppercaseLetters, enabled: options.uppercase, color: "var(--uppercase-group)" },
+			{ chars: this.lowercaseLetters, enabled: options.lowercase, color: "var(--lowercase-group)" },
+			{ chars: this.numbers, enabled: options.numbers, color: "var(--number-group)" },
+			{ chars: this.specialCharacters, enabled: options.symbols, color: "var(--symbol-group)" },		];
 
 		let password = "";
 		let colors: string[] = [];
@@ -124,11 +123,11 @@ const themeContainer: HTMLElement | null = document.getElementById('theme-contai
 if (themeContainer) {
     themeContainer.addEventListener('click', event => {
         const target = event.target as HTMLElement;
-        if (target.id === 'dark') {
+        if (target.id === 'dark' || target.id === 'dark-svg') {
             setTheme('dark');
-        } else if (target.id === 'light') {
+        } else if (target.id === 'light' || target.id === 'light-svg') {
             setTheme('light');
-        } else if (target.id === 'solar') {
+        } else if (target.id === 'solar' || target.id === 'solar-svg') {
             toggleSolar();
         }
     });
