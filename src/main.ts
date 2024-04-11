@@ -136,22 +136,18 @@ if (themeContainer) {
 
 function setTheme(theme: string): void {
     body.classList.replace(body.classList.item(0) as string, theme);
-    localStorage.setItem('theme', theme);
 }
 
 function toggleSolar(): void {
     const isSolar: boolean = body.classList.contains('solar');
     if (isSolar) {
         body.classList.remove('solar');
-        localStorage.setItem('theme', body.classList.item(0) as string);
     } else {
         body.classList.add('solar');
-        localStorage.setItem('theme', 'solar');
     }
 }
 
-// On page load
-const theme: string | null = localStorage.getItem('theme');
+const theme: string = 'dark';
 if (theme) {
     body.classList.add(theme);
     if (theme === 'solar') {
