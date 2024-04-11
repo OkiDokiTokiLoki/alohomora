@@ -243,7 +243,7 @@ form label:not(:last-of-type) {
 
 form input[type="checkbox"] {
   margin-right: 5px;
-  accent-color: var(--container-hover);
+  accent-color: var(--accent-col);
 }
 
 label.toggler-wrapper {
@@ -259,7 +259,7 @@ label.toggler-wrapper input[type="checkbox"] {
 }
 
 label.toggler-wrapper input[type="checkbox"]:checked+.toggler-slider {
-  background-color: var(--container-hover);
+  background-color: var(--accent-col);
 }
 
 label.toggler-wrapper .toggler-slider {
