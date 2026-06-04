@@ -1,23 +1,25 @@
-# Password generator
+# Alohomora
 
-👉 [Live demo](https://okidokitokiloki.github.io/alohomora/)
+A small, browser-based password generator. Pick which character group(s) to include, set a length, and copy a cryptographically random password in one click.
 
-## General info
-In essence, this is just a glorified random ~~number~~ string generator, no fancy "true-random" libraries or anything like that used over here, who knows, maybe some day down the line.     
-The final output is based on user input between various character groups (uppercase, lowercase, numbers, and symbols) and output length.
+👉 **[Live demo](https://okidokitokiloki.github.io/alohomora/)**
 
-## Features 
-* Similar looking characters have been removed e.g. I, l or 0, O
-* Each character group has it's own colour formatting for easier identification (additionally: the option to solarise colours)
-* Minimum password length is 16 characters for decent strength (default 25)
-* Copy to clipboard functionality (password itself and dedicated button)
-* Inputs are reactive to user change
-* Minor form validation (checkboxes cannot be "unselected")
-* Theme switcher and solarise options
+## How it works
 
-## Technologies
-Created with:
-* Vite
-* TypeScript
-* HTML
-* CSS
+Passwords are built from the enabled character groups. Each character is chosen with [`crypto.getRandomValues()`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues), so generation stays unpredictable.
+
+## Features
+
+- **Ambiguous characters removed** — Confusing pairs like `I` / `l` and `0` / `O` are excluded from the pool.
+- **Colour-coded output** — Each character group uses its own colour for easier distinction with the option to solarise which further adjusts certain colour contrast levels.
+- **Sensible defaults** — Minimum length is 16 characters; the default is 25.
+- **Copy to clipboard** — Click the password or use the dedicated copy button.
+- **Live updates** — The password regenerates as options or length are changed.
+- **Validation** — At least one character group must stay selected.
+- **Appearance** — Light / dark theme with solarise toggle for each.
+
+## Tech stack
+
+- [Vite](https://vitejs.dev/)
+- TypeScript
+- HTML & CSS
