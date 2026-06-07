@@ -46,10 +46,16 @@ const ENTROPY_LEVELS = [
     { min: 200, label: "Excellent", cls: "entropy-excellent" },
     { min: 150, label: "Strong", cls: "entropy-strong" },
     { min: 100, label: "Nice", cls: "entropy-fair" },
+    { min: 0, label: "Weak", cls: "entropy-none" },
 ] as const;
 
 function updateEntropyDisplay(entropy: number): void {
     if (!entropyDisplay) return;
+    if (entropy === 0) {
+        entropyDisplay.className = "entropy-display entropy-none";
+        entropyDisplay.textContent = "0.0 bits — None";
+        return;
+    }
     const level = ENTROPY_LEVELS.find((l) => entropy >= l.min)!;
     entropyDisplay.className = `entropy-display ${level.cls}`;
     entropyDisplay.textContent = `${entropy.toFixed(1)} bits — ${level.label}`;
@@ -89,6 +95,7 @@ function updateGeneratedPassword(): void {
     if (!result.ok) {
         setCharacterGroupsError(true);
         generatedPasswordElement.textContent = result.message;
+        updateEntropyDisplay(0);
         return;
     }
 

@@ -242,6 +242,9 @@ h1 {
     transition: color 300ms ease;
 }
 
+.entropy-none {
+    color: var(--accent);
+}
 .entropy-fair {
     color: var(--symbol-group);
 }
