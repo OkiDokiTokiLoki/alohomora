@@ -15,7 +15,7 @@ Passwords are built from the enabled character groups. Each character is chosen 
 - **Sensible defaults** — Minimum length is 16 characters; the default is 25.
 - **Copy to clipboard** — Click the password or use the dedicated copy button.
 - **Live updates** — The password regenerates as options or length are changed.
-- **Entropy display** — Shows the bit strength of the current password configuration, influenced by the password length.
+- **Entropy display** — Shows the bit strength of the current password configuration, influenced by the password length and active character groups.
 - **Validation** — At least one character group must stay selected.
 - **Appearance** — Light / dark theme with solarise toggle for each.
 
