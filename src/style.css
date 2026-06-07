@@ -232,6 +232,29 @@ h1 {
     margin-inline: 0.5px;
 }
 
+.entropy-display {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    letter-spacing: 0.04rem;
+    text-align: center;
+    transition: color 300ms ease;
+}
+
+.entropy-fair {
+    color: var(--symbol-group);
+}
+.entropy-strong {
+    color: var(--uppercase-group);
+}
+.entropy-excellent {
+    color: var(--number-group);
+}
+.entropy-ultimate {
+    color: var(--lowercase-group);
+}
+
 .actions {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

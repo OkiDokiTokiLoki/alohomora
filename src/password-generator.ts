@@ -10,7 +10,12 @@ type CharacterGroup = {
     color: string;
 };
 
-export type PasswordResult = { ok: true; password: string; colors: string[] } | { ok: false; message: string };
+export type PasswordResult = { ok: true; password: string; colors: string[]; entropy: number } | { ok: false; message: string };
+
+export function calculateEntropy(length: number, options: PasswordOptions): number {
+    const poolSize = (Object.keys(options) as (keyof PasswordOptions)[]).filter((k) => options[k]).reduce((sum, k) => sum + CHARACTER_SETS[k].length, 0);
+    return poolSize > 0 ? length * Math.log2(poolSize) : 0;
+}
 
 export const NO_GROUPS_MESSAGE = "No character groups active :(";
 
@@ -48,14 +53,13 @@ export class PasswordGenerator {
 
         let password = "";
         const colors: string[] = [];
-        const usedInCurrentCycle = new Set<string>();
+        let lastChar = "";
 
         for (let position = 0; position < length; position++) {
             const group = pickRandom(enabledGroups);
-            const availableChars = [...group.chars].filter((char) => !usedInCurrentCycle.has(char));
+            const availableChars = [...group.chars].filter((char) => char !== lastChar);
 
             if (availableChars.length === 0) {
-                usedInCurrentCycle.clear();
                 position--;
                 continue;
             }
@@ -63,10 +67,10 @@ export class PasswordGenerator {
             const char = pickRandom(availableChars);
             password += char;
             colors.push(group.color);
-            usedInCurrentCycle.add(char);
+            lastChar = char;
         }
 
-        return { ok: true, password, colors };
+        return { ok: true, password, colors, entropy: calculateEntropy(length, options) };
     }
 
     private getEnabledGroups(options: PasswordOptions): CharacterGroup[] {
